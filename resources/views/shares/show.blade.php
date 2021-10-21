@@ -10,8 +10,10 @@
         <div class="py-12">
             <h2>{{ $share->titre }}</h2>
             <p>{{ $share->description }}</p>
-            <p><a href="#">{{ $share->user->name }}</a></p>
+            <p><a href="/profile/{{ $share->user->id }}">{{ $share->user->name }}</a></p>
         </div>
+        @if(Auth::user())
         <a href="/share/edit/{{ $share->id }}">Edit</a>
+            @endif
     </div>
 </x-app-layout>

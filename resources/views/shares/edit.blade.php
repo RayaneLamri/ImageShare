@@ -11,7 +11,8 @@
             @method('PATCH')
             <div>
                 <label for="image">Image of the share</label>
-                <img type="text" name="image" id="image" value="{{ $share->image }}">
+                <img src="{{ asset('storage/' . $share->image) }}">
+                <input type="file" name="image" id="image">
                 @if($errors->has('image'))
                     <small class="error">{{ $errors->first('image') }}</small>
                 @endif
