@@ -20,7 +20,9 @@ Route::get('/', function () {
 
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [ShareController::class,'welcome'])->name('dashboard');
 Route::get('/dashboard', [ShareController::class,'welcome'])->name('dashboard');
-
+//Route::group(['middleware' => 'auth', 'prefix' => '/share'], function () {
+//  Route::resource('/', ShareController::class);
+//});
 Route::get('/shares', [ShareController::class,'index']);
 Route::get('/share/show/{share:id}', [ShareController::class,'show']);
 Route::get('/share/create', [ShareController::class,'create'])->name('new')->middleware(['auth']);

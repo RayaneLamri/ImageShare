@@ -21,6 +21,7 @@ class ShareController extends Controller
     public function index()
     {
         return view('shares.index');
+        // User::paginate(15);
     }
 
     /**
