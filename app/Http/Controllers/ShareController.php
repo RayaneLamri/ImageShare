@@ -49,7 +49,7 @@ class ShareController extends Controller
             'user_id' => Auth::user()->id
         ]);
         $request->file('image')->store('public');
-        return redirect('/shares');
+        return redirect('/');
     }
 
     /**
@@ -92,7 +92,7 @@ class ShareController extends Controller
         ]);
 
         $request->file('image')->store('public');
-        return redirect('/shares');
+        return redirect('/');
     }
 
     /**
@@ -105,7 +105,7 @@ class ShareController extends Controller
     {
         Storage::delete($share->image);
         $share->delete();
-        return redirect('/shares');
+        return redirect('/');
     }
 
     public function profile(Share $share)
