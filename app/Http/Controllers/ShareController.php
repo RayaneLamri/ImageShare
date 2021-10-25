@@ -71,7 +71,7 @@ class ShareController extends Controller
      */
     public function edit(Share $share)
     {
-        return view('shares.edit', ['share' => $share]);
+      return $share->user->id == Auth::user()->id ? view('shares.edit', ['share' => $share]) : redirect('/dashboard');
     }
 
     /**

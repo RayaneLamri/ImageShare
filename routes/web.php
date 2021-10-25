@@ -14,12 +14,8 @@ use App\Http\Controllers\ShareController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [ShareController::class,'welcome'])->name('dashboard');
-Route::get('/dashboard', [ShareController::class,'welcome'])->name('dashboard');
+Route::get('/', [ShareController::class,'welcome'])->name('dashboard');
 //Route::group(['middleware' => 'auth', 'prefix' => '/share'], function () {
 //  Route::resource('/', ShareController::class);
 //});
@@ -33,4 +29,3 @@ Route::delete('/share/delete/{share:id}',[ShareController::class,'destroy'])->mi
 
 Route::get('/profile', [ShareController::class,'profile'])->name('profile');
 Route::get('/profile/{share:user_id}', [ShareController::class,'userprof'])->name('userprof');
-
