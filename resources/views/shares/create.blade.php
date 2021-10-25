@@ -14,46 +14,16 @@
 
   </script>
 <x-app-layout>
-    <form method="POST" enctype="multipart/form-data" action="/share/create">
-        @csrf
-        <div>
-            <label for="image">Upload your picture:</label>
-            <img id="file-ip-1-preview" src="https://i.ibb.co/ZVFsg37/default.png">
-            <input type="file"
-                   id="image" name="image"
-                   accept="image/png, image/jpeg, image/jpg" onchange="showPreviewOne(event);">
-            @if($errors->has('image'))
-                <small class="error">{{ $errors->first('image') }}</small>
-            @endif
-        </div>
-        <div>
-            <label for="title">Title of the share</label>
-            <input type="text" name="title" id="title">
-            @if($errors->has('title'))
-                <small class="error">{{ $errors->first('title') }}</small>
-            @endif
-        </div>
-        <div>
-            <label for="description">Description of the share</label>
-            <input type="text" name="description" id="description">
-            @if($errors->has('description'))
-                <small class="error">{{ $errors->first('description') }}</small>
-            @endif
-        </div>
-        <input type="submit" value="Submit">
-    </form>
-    <div>
-  <!-- <div class="md:grid md:grid-cols-3 md:gap-6">
+  <div class="py-12 px-12 md:grid md:grid-cols-2 justify-center h-50">
     <div class="md:col-span-1">
-      <div class="px-4 sm:px-0">
-        <h3 class="text-lg font-medium leading-6 text-gray-900">Profile</h3>
-        <p class="mt-1 text-sm text-gray-600">
-          This information will be displayed publicly so be careful what you share.
-        </p>
+      <div class="flex justify-center object-fit-cover">
+        <img class="h-100 w-100 md:col-span-1" id="file-ip-1-preview" src="https://i.ibb.co/ZVFsg37/default.png">
       </div>
     </div>
-    <div class="mt-5 md:mt-0 md:col-span-2">
-      <form action="#" method="POST">
+    <div class="mt-5 md:mt-0 md:col-span-1">
+      <form method="POST" enctype="multipart/form-data" action="/share/create" method="POST">
+        @csrf
+        @method('POST')
         <div class="shadow sm:rounded-md sm:overflow-hidden">
           <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
             <div class="grid grid-cols-3 gap-6">
@@ -66,10 +36,10 @@
                     Share
                   </span>
                   <input type="text" name="title" id="title" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="title">
-                  @if($errors->has('title'))
-                      <small class="error">{{ $errors->first('title') }}</small>
-                  @endif
                 </div>
+                @if($errors->has('title'))
+                    <small class="error">{{ $errors->first('title') }}</small>
+                @endif
               </div>
             </div>
 
@@ -80,9 +50,9 @@
               <div class="mt-1">
                 <textarea id="description" name="description" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="What about it?"></textarea>
               </div>
-              <p class="mt-2 text-sm text-gray-500">
-                Brief description of your share.
-              </p>
+              @if($errors->has('description'))
+                  <small class="error">{{ $errors->first('description') }}</small>
+              @endif
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700">
@@ -96,7 +66,12 @@
                   <div class="flex text-sm text-gray-600">
                     <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                       <span>Upload a file</span>
-                      <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                      <input type="file"
+                             id="image" name="image"
+                             accept="image/png, image/jpeg, image/jpg" onchange="showPreviewOne(event);">
+                      @if($errors->has('image'))
+                          <small class="error">{{ $errors->first('image') }}</small>
+                      @endif
                     </label>
                     <p class="pl-1">or drag and drop</p>
                   </div>
@@ -115,6 +90,5 @@
         </div>
       </form>
     </div>
-  </div> -->
-</div>
+  </div>
 </x-app-layout>

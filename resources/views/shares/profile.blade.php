@@ -31,7 +31,7 @@
 <x-app-layout>
     <div class="py-10">
       <div class="font-semibold text-xl text-gray-800 leading-tight">
-        <div class="flex justify-center"><img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" /></div>
+        <div class="flex justify-center"><img class="h-8 w-8 rounded-full object-cover" src="{{ $user->profile_photo_url ?? Auth::user()->profile_photo_url }}" alt="{{ $user->name ?? Auth::user()->name }}" /></div>
         <div class="flex justify-center"><strong>{{ $user->name ?? Auth::user()->name }}</strong></div>
         <div class="flex justify-center"><small>{{ $user->email ?? Auth::user()->email }}</small></div>
       </div>
