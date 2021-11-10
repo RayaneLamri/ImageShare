@@ -23,4 +23,4 @@ Created at [BeCode](https://github.com/becodeorg).
 
 ### v.1.0.0
 
-- [Inital release](http://imagesharebecode.herokuapp.com/)
+- [Inital release](http://laravelpinterest.herokuapp.com/)
