@@ -17,7 +17,7 @@ Created at [BeCode](https://github.com/becodeorg).
 - Deploy platform : Heroku    
 - Database        : MySQL     
 
-## The ImageShare App
+## Deployment
 
 ### v.1.0.0
 
