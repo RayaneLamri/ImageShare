@@ -11,11 +11,11 @@ Created at [BeCode](https://github.com/becodeorg).
 
 ## Tech
 
-- Laravel (Framework PHP)
-- Livewire (Techno Laravel: gestion auth)
-- Tailwind (Framework CSS)
-- Heroku (Plateforme de déploiement)
-- PostgreSQL (DB)
+- PHP Framework   : Laravel
+- Laravel Library : Livewire
+- CSS Framework   : TailwindCSS
+- Deploy platform : Heroku    
+- Database        : MySQL     
 
 ## The ImageShare App
 
